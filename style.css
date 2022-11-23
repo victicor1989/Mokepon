@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@300&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #041562;
+}
+
+#seleccionar-mascota {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    color: white;
+    font-size: 32px;
+    font-family: 'Fredoka One', cursive;
+}
+
+.subtitulo {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.tarjetas,
+.tarjetas-ataques {
+    display: flex;
+    gap: 10px;
+}
+
+.tarjeta-de-mokepon {
+    height: 100px;
+    width: 180px;
+    background-color: #11468f;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+.tarjeta-de-mokepon img {
+    width: 80px;
+}
+
+#boton-mascota {
+    width: 180px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    margin-top:  30px;
+}
+
+input {
+    display: none;
+}
+
+input:checked + label {
+    background-color: #5D8BF4;
+}
+
+#seleccionar-ataque {
+    flex-direction: column;
+    align-items: center;
+}
+
+.boton-de-ataque {
+    background-color: #11468F;
+    padding: 10px;
+    box-sizing: border-box;
+    color: white;
+    border-radius: 20px;
+    width: 180px;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+#mensajes {
+    width: 280px;
+    background-color: #607EAA;
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#resultado {
+    color: white;
+}
+
+#boton-reiniciar {
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 100px;
+    color: #11468F;
+    font-family: 'Poppins', sans-serif;
+}
+
+.ataques {
+    display: grid;
+    grid-template-columns: 100px 100px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+#vidas-jugador, 
+#vidas-enemigo {
+    font-size: 32px;
+    margin-bottom: 0;
+}
+
+.ataques-jugador,
+.ataques-enemigo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Desde 0px hasta 360px */
+
+@media (max-width: 400px) {
+    .tarjetas,
+    .tarjetas-ataques {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
