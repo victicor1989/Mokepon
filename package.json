@@ -1,0 +1,22 @@
+{
+  "name": "mokepon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victicor1989/Mokepon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/victicor1989/Mokepon/issues"
+  },
+  "homepage": "https://github.com/victicor1989/Mokepon#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
