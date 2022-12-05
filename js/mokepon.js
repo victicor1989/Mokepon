@@ -91,13 +91,17 @@ let hipodogeEnemigo = new Mokepon('Hipodoge', './assets/hipodoge.png', 5, './ass
 let capipepoEnemigo = new Mokepon('Capipepo' , './assets/capipepo.png', 5, './assets/capipepo-head.png')
 let ratigueyaEnemigo = new Mokepon('Ratigueya', './assets/ratigueya.png', 5, './assets/ratigueya-head.png')
 
-hipodoge.ataques.push(
+const HIPODOGE_ATAQUES = [
     { nombre: '💧', id: 'boton-agua' },
     { nombre: '💧', id: 'boton-agua' },
     { nombre: '💧', id: 'boton-agua' },
     { nombre: '🔥', id: 'boton-fuego' },
     { nombre: '🌱', id: 'boton-tierra' }
-)
+]
+
+
+
+hipodoge.ataques.push(...HIPODOGE_ATAQUES)
 
 hipodogeEnemigo.ataques.push(
     { nombre: '💧', id: 'boton-agua' },
@@ -373,6 +377,9 @@ function pintarCanvas() {
         mapa.height
     )
     mascotaJugadorObjeto.pintarMokepon()
+
+    enviarPosicon(mascotaJugadorObjeto.x, mascotaJugadorObjeto.y)
+
     hipodogeEnemigo.pintarMokepon()
     capipepoEnemigo.pintarMokepon()
     ratigueyaEnemigo.pintarMokepon()
@@ -381,6 +388,27 @@ function pintarCanvas() {
         revisarColison(capipepoEnemigo)
         revisarColison(ratigueyaEnemigo)
     }
+}
+
+function enviarPosicon(x, y) {
+    fetch(`http://localhost:8080/mokepon/${jugadorId}/posicion`, {
+        method: 'post',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            x,
+            y
+        })
+    })
+    .then(function (res) {
+        if (res.ok) {
+            res.json()
+            .then(function ({ enemigos }) {
+                console.log(enemigos);
+            })
+        }
+    })
 }
 
 function moverDerecha() {
