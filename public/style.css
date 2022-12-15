@@ -146,6 +146,7 @@ input:checked + label {
 
 /* Desde 0px hasta 360px */
 
+
 @media (max-width: 560px) {
     .tarjetas,
     .tarjetas-ataques {

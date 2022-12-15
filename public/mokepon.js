@@ -520,4 +520,5 @@ function revisarColison(enemigo) {
     seleccionarMascotaEnemigo(enemigo)
 }
 
+
 window.addEventListener('load', iniciarJuego)
