@@ -1,3 +1,4 @@
+const apiUrl = 'http://10.10.1.135:8080'
 const sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
 const sectionReiniciar = document.getElementById('reiniciar')
 const botonMascotaJugador = document.getElementById('boton-mascota')
@@ -148,7 +149,7 @@ function iniciarJuego() {
 }
 
 function unirseAlJuego() {
-    fetch('http://192.168.1.7:8080/unirse')
+    fetch(apiUrl+'/unirse')
         .then(function(res) {
             if (res.ok) {
                 res.text()
@@ -184,7 +185,7 @@ function seleccionarMascotaJugador() {
 }
 
 function seleccionarMokepon(mascotaJugador) {
-    fetch(`http://192.168.1.7:8080/mokepon/${jugadorId}`, {
+    fetch(`${apiUrl}/mokepon/${jugadorId}`, {
         method: 'post',
         headers: {
             'content-Type': 'application/json'
@@ -246,7 +247,7 @@ function secuenciaAtaque() {
 }
 
 function enviarAtaques() {
-    fetch(`http://192.168.1.7:8080/mokepon/${jugadorId}/ataques`, {
+    fetch(`${apiUrl}/mokepon/${jugadorId}/ataques`, {
         method: 'post',
         headers: {
             'Content-Type': 'application/json'
@@ -261,7 +262,7 @@ function enviarAtaques() {
 }  
 
 function obtenerAtaques() {
-    fetch(`http://192.168.1.7:8080/mokepon/${enemigoId}/ataques`)
+    fetch(`${apiUrl}/mokepon/${enemigoId}/ataques`)
         .then(function (res) {
             if (res.ok) {
                 res.json()
@@ -396,7 +397,7 @@ function pintarCanvas() {
 }
 
 function enviarPosicon(x, y) {
-    fetch(`http://192.168.1.7:8080/mokepon/${jugadorId}/posicion`, {
+    fetch(`${apiUrl}/mokepon/${jugadorId}/posicion`, {
         method: 'post',
         headers: {
             'Content-Type': 'application/json'

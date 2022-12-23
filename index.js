@@ -36,6 +36,7 @@ app.get('/unirse', (req, res) => {
     const id = `${Math.random()}`
     const jugador = new Jugador(id)
     jugadores.push(jugador)
+    console.log(jugadores)
     res.setHeader('Access-Control-Allow-Origin', '*')
     res.send(id)
 })
@@ -93,7 +94,7 @@ app.get('/mokepon/:jugadorId/ataques', (req, res) => {
 })
 
 app.listen(8080, () => {
-    console.log('Servidor funcionando');
+    console.log(`Servidor funcionando en http://localhost:8080`);
 })
 
 
